@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 const Homework2 = () => {
-    const [show,setShow] = useState([]);
-    const [data,setData] = useState({});
+  const [show, setShow] = useState([]);
+  const [data, setData] = useState({});
 
-    const submitData = (e) =>{
-        setShow([...show,data]);
-        setData({});
-    }
+  const submitData = (e) => {
+    e.preventDefault();
+    setShow([...show, data]);
+  };
 
   return (
     <div>
@@ -15,24 +15,53 @@ const Homework2 = () => {
       <form>
         <div>
           <label>Name:</label>
-          <input type="text" />
+          <input
+            id="i1"
+            type="text"
+            onChange={(e) => {
+              e.preventDefault();
+              setData({ ...data, name: e.target.value });
+            }}
+          />
         </div>
 
         <div>
-          <label>Name:</label>
-          <input type="text" />
+          <label>age:</label>
+          <input
+            id="i2"
+            type="number"
+            onChange={(e) => {
+              e.preventDefault();
+              setData({ ...data, age: e.target.value });
+            }}
+          />
         </div>
 
         <div>
-          <label>Name:</label>
-          <input type="text" />
+          <label>hobbie:</label>
+          <input
+            id="i3"
+            type="text"
+            onChange={(e) => {
+              e.preventDefault();
+              setData({ ...data, hobbie: e.target.value });
+            }}
+          />
         </div>
 
-        <button type="submit" onClick={submitData}>Submit</button>
+        <button type="submit" onClick={submitData}>
+          Submit
+        </button>
       </form>
 
       <ul>
-        <li>item1</li>
+        {show.map((item, index) => {
+          return (
+            <li key={index}>
+              Name: {item.name} | age: {item.age} | hobbie: {item.hobbie}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
