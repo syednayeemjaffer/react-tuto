@@ -6,7 +6,7 @@ import MessageInput from "./component/MessageInput";
 import MessageList from "./component/MessageList";
 import Submit from "./component/Submit";
 import Homework1 from "./component/Homework1";
-import Fetch from "./component/Fetch";
+import UseRef from "./component/UseRef";
 
 function App() {
   // const [messages, setMessages] = useState([]);
@@ -18,12 +18,11 @@ function App() {
  
   return (
     <div className="App">
-      <Homework1/>
       {/* <TodoApp/> */}
       {/* <MessageInput addMessage={addMessage} />
       <MessageList messages={messages} /> */}
       {/* <Submit/> */}
-      <Fetch/>
+      <UseRef/>
     </div>
   );
 }
