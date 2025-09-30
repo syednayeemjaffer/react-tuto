@@ -19,7 +19,6 @@ const Homework2 = () => {
             id="i1"
             type="text"
             onChange={(e) => {
-              e.preventDefault();
               setData({ ...data, name: e.target.value });
             }}
           />
@@ -31,7 +30,6 @@ const Homework2 = () => {
             id="i2"
             type="number"
             onChange={(e) => {
-              e.preventDefault();
               setData({ ...data, age: e.target.value });
             }}
           />
@@ -43,7 +41,6 @@ const Homework2 = () => {
             id="i3"
             type="text"
             onChange={(e) => {
-              e.preventDefault();
               setData({ ...data, hobbie: e.target.value });
             }}
           />
